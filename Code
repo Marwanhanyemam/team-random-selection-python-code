@@ -1,0 +1,25 @@
+import random  # Import the random module to generate random selections
+
+# Define the teams
+team1 = [1, 2, 3, 4]
+team2 = ['a', 'b', 'c','d']
+team3 = [99, 88, 77,66]
+team4 = ["1$","2&","3%","4©"]
+
+teams = [team1, team2, team3, team4]  # Store all teams in a list
+
+# Define a function to generate a random mixed list
+def generate_mixed_list(teams):
+    mixed_list = []
+    for team in teams:
+        selected = random.choice(team)
+        mixed_list.append(selected)
+        team.remove(selected)  # Remove the selected element from the team
+    return mixed_list
+
+num_lists = 4  # Number of random mixed lists to generate
+
+# Generate and print the specified number of random mixed lists
+for _ in range(num_lists):
+    random_mixed_list = generate_mixed_list(teams)  # Generate a random mixed list
+    print(random_mixed_list)  # Print the generated mixed list
